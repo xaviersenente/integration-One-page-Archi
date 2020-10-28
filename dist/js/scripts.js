@@ -49,3 +49,19 @@ document.querySelectorAll('[aria-hidden="true"]').forEach(item => {
   item.removeAttribute('aria-hidden');
 });
 
+// Pour afficher la grille
+// =================================
+
+var btnGrid = document.querySelector(".btnGrid");
+var body    = document.querySelector("body");
+
+function showGrid() {
+  body.classList.toggle('show');
+  if (btnGrid.textContent === "Afficher la grille") {
+    btnGrid.textContent = "Masquer la grille";
+  } else {
+    btnGrid.textContent = "Afficher la grille";
+  }
+}
+btnGrid.addEventListener('click', showGrid);
+

@@ -739,6 +739,113 @@ section {
   }
 }
 
+@media (min-width: 768px) {
+  .grid {
+    display: -ms-grid;
+    display: grid;
+    grid-gap: 30px;
+    /**
+		* grid-auto-flow indique le fonctionnement de l'algorithme de placement automatique et
+		* détaille comment les éléments placés automatiquement « coulent » dans la grille.
+		* Avec la valeur "dense" l'algorithme utilisera une méthode de « regroupement dense »
+		* où il essaie de remplir les trous dans la grille si des éléments plus petits arrivent ensuite.
+		**/
+    grid: auto-flow dense/repeat(12, minmax(0, calc( ( 1240px - 30px * ( 12 - 1 ) ) / 12)));
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    /** 
+		* Permet une marge de sécurité sur les bords de la page 
+		* lorsqu'il n'y a plus d'espaces automatiques disponible de chaque coté 
+		**/
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+  .grid__third {
+    grid-column: span  4;
+  }
+}
+
+:root {
+  --offset: 20px;
+  --max_width: 1240px;
+  --columns: 4;
+  --gutter: 30px;
+  --color: hsla(191, 100%, 50%, 0.1);
+  /* Helper variables */
+  --repeating-width: calc(100% / var(--columns));
+  --column-width: calc((100% / var(--columns)) - var(--gutter));
+  --background-width: calc(100% + var(--gutter));
+  --background-columns: repeating-linear-gradient(
+    to right,
+    var(--color),
+    var(--color) var(--column-width),
+    transparent var(--column-width),
+    transparent var(--repeating-width)
+  );
+}
+
+@media (min-width: 768px) {
+  :root {
+    --columns: 12;
+  }
+}
+
+body {
+  position: relative;
+}
+
+body::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin-right: auto;
+  margin-left: auto;
+  width: calc(100% - (2 * var(--offset)));
+  max-width: var(--max_width);
+  min-height: 100vh;
+  content: '';
+  background-image: var(--background-columns);
+  background-size: var(--background-width) 100%;
+  opacity: 0;
+  -webkit-transform-origin: top center;
+          transform-origin: top center;
+  z-index: 1000;
+  pointer-events: none;
+  -webkit-transition: opacity .5s;
+  transition: opacity .5s;
+}
+
+body.show::before {
+  opacity: 1;
+}
+
+.btnGrid {
+  display: none;
+  position: fixed;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  top: 300px;
+  left: 0;
+  z-index: 20;
+  outline: 0;
+  border: none;
+  padding: 10px 20px;
+  background-color: #A3A3A3;
+  color: #161616;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .btnGrid {
+    display: block;
+  }
+}
+
 .header {
   position: absolute;
   left: 0;

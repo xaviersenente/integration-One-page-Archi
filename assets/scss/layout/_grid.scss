@@ -1,0 +1,101 @@
+$min: 0;
+// Calcul pour la taille maximum d'une colonne de la grille
+$max: calc( ( #{ $container } - #{ $grid-gap } * ( #{ $grid-columns } - 1 ) ) / #{ $grid-columns } );
+
+.grid {
+	@include  bp-up('md') {
+		display: grid;
+		grid-gap: $grid-gap;
+		/**
+		* grid-auto-flow indique le fonctionnement de l'algorithme de placement automatique et
+		* détaille comment les éléments placés automatiquement « coulent » dans la grille.
+		* Avec la valeur "dense" l'algorithme utilisera une méthode de « regroupement dense »
+		* où il essaie de remplir les trous dans la grille si des éléments plus petits arrivent ensuite.
+		**/
+		grid: auto-flow dense / repeat( $grid-columns, minmax( $min, $max ) );
+		// Permet de centrer la grille dans la largeur de la page
+		justify-content: center;
+		/** 
+		* Permet une marge de sécurité sur les bords de la page 
+		* lorsqu'il n'y a plus d'espaces automatiques disponible de chaque coté 
+		**/
+		padding-right: $container-margin;
+		padding-left: $container-margin;
+		
+		// Pour définir un partage de la grille en 3 colonnes
+		&__third {
+			grid-column: span  4;
+		}
+	}
+}
+
+
+// Afficher la grille
+
+:root {
+  --offset: #{ $container-margin };
+  --max_width: #{ $container };
+  --columns: 4;
+  --gutter: #{ $grid-gap };
+  --color: hsla(191, 100%, 50%, 0.1);
+  /* Helper variables */
+  --repeating-width: calc(100% / var(--columns));
+  --column-width: calc((100% / var(--columns)) - var(--gutter));
+  --background-width: calc(100% + var(--gutter));
+  --background-columns: repeating-linear-gradient(
+    to right,
+    var(--color),
+    var(--color) var(--column-width),
+    transparent var(--column-width),
+    transparent var(--repeating-width)
+  );
+}
+
+@include bp-up('md') {
+  :root {
+    --columns: 12;
+  }
+}
+
+body {
+  position: relative;
+  &::before {
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    margin-right: auto;
+    margin-left: auto;
+    width: calc(100% - (2 * var(--offset)));
+    max-width: var(--max_width);
+    min-height: 100vh;
+    content: '';
+    background-image: var(--background-columns);
+    background-size: var(--background-width) 100%;
+    opacity: 0;
+    transform-origin: top center;
+    z-index: 1000;
+    pointer-events: none;
+    transition: opacity .5s;
+  }
+  &.show::before {
+    opacity: 1;
+  }
+}
+
+.btnGrid {
+  display: none;
+  position: fixed;
+  transform: rotate(-90deg);
+  transform-origin: 0 0;
+  top: 300px;
+  left: 0;
+  z-index: 20;
+  outline: 0;
+  border: none;
+  padding: 10px 20px;
+  background-color: map-get($gray, 100);
+  color: map-get($gray, 800);
+  cursor: pointer;
+  @include bp-up('md') {
+    display: block;
+  }
+}
