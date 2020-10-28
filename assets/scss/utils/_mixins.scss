@@ -1,0 +1,68 @@
+/**
+* Mixin qui permet de rendre la taille de typographie fluide
+**/
+
+@mixin fluid-type($heading) {
+  $min-vw: map-get($breakpoints, sm);       // taille minimum d'écran
+  $max-vw: map-get($breakpoints, lg);       // taille maximum d'écran
+  $min-font-size: map-get($heading, min);   // taille minimum de police
+  $max-font-size: map-get($heading, max);   // taille maximum de police
+
+  /**
+  * @link https://css-tricks.com/snippets/css/fluid-typography/
+  * Calcul du "scaler" :
+  * calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width])));
+  * Exemple avec $heading-1 :
+  * taille d'écran min    => 48 + (64 - 48) * ((576 - 576) / (1170 - 576)) = 48 + 16 * (0 / 594) = 48
+  * taille d'écran medium => 48 + (64 - 48) * ((873 - 576) / (1170 - 576)) = 48 + 16 * (297 / 594) = 56
+  * taille d'écran max    => 48 + (64 - 48) * ((1170 - 576) / (1170 - 576)) = 48 + 16 * (594 / 594) = 64
+  **/
+  $scaler: calc( #{ pxToRem( strip-unit( $min-font-size )) } + #{ strip-unit( $max-font-size - $min-font-size ) } * ( ( 100vw - #{$min-vw} ) / #{ strip-unit( $max-vw - $min-vw ) } ) );
+
+  /**
+  * La fonction CSS clamp() permet de ramener une valeur entre deux bornes inférieure et supérieure. 
+  * Cette fonction utilise trois paramètres : une valeur minimale, la valeur à tester et une valeur maximale.
+  **/
+  
+  font-size: clamp( pxToRem( strip-unit( $min-font-size ) ), $scaler, pxToRem( strip-unit( $max-font-size ) ) );
+}
+
+
+/**
+* Système de Breakpoint repris de Bootstrap
+**/
+
+@mixin bp-up($name, $breakpoints: $breakpoints) {
+  $min: breakpoint-min($name, $breakpoints);
+  @if $min {
+    @media (min-width: $min) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+@mixin bp-down($name, $breakpoints: $breakpoints) {
+  $max: breakpoint-max($name, $breakpoints);
+  @if $max {
+    @media (max-width: $max) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+/**
+* Pour les éléments en dehors de la grille
+**/
+
+@mixin outsideRight {
+  @include bp-up('md') {
+    margin-right: - #{ $container-margin };
+  }
+  @include bp-up('lg') {
+    margin-right: calc((#{ $container } - 100vw)/2);
+  }
+}
