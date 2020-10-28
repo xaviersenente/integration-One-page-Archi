@@ -18,3 +18,34 @@ function doToggle() {
 hamburger.addEventListener('click', doToggle);
 
 
+// CAROUSEL PROJETS
+// =================================
+
+let carouselFkty = document.querySelector('.carouselFkty');
+let arrows = document.querySelector('.projects__arrows');
+
+// Init
+let flkty = new Flickity( carouselFkty, {
+  prevNextButtons: false,
+  pageDots: false,
+  cellAlign: "left", 
+  contain: true
+});
+
+// previous
+let previousButton = arrows.querySelector('.arrows__item--prev');
+previousButton.addEventListener( 'click', function() {
+  flkty.previous();
+});
+
+// next
+let nextButton = arrows.querySelector('.arrows__item--next');
+nextButton.addEventListener( 'click', function() {
+  flkty.next();
+});
+
+// Pour améliorer l'accessibilité sur le carousel
+document.querySelectorAll('[aria-hidden="true"]').forEach(item => {
+  item.removeAttribute('aria-hidden');
+});
+
