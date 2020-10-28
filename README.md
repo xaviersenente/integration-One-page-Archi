@@ -1,19 +1,11 @@
-# Mobile first
+# Mise en place du menu rétractable
 
-Le Mobile First est un concept qui consiste à concevoir un site en mettant la priorité sur la version mobile et en adaptant progressivement le web design pour les écrans plus large.
+La mise en place du menu rétractable nécessite un peu de javascript. Il est utilisé essentiellement pour ajouter des classes et modifier ainsi l'apparence du menu lorsque l'on clique sur l'icône hamburger.
 
-Du point de vue du code cela a d'autant plus de pertinence que ce dernier est plus simple en règle générale dans sa version mobile. On ajoute ensuite de la complexité (grille, effets de survol…) pour les versions étendues.
+L'utilisation de transformations et d'animations css permet un rendu plus dynamique et réaliste.
 
-Un peu de lecture sur le sujet : [https://abookapart.com/products/mobile-first](https://abookapart.com/products/mobile-first)
+Pour aller un peu plus loin dans la réflexion : https://polypane.app/blog/the-perfect-responsive-menu/
 
-Faire le code CSS pour les éléments suivants :
-- _main.scss
-- _sections.scss
-- _typography.scss
-- _btn.scss
-- _card.scss
-- _carousel.scss
-- _form.scss
-- _menu.scss (pour l'instant, le masquer simplement avec un `display: none;`)
-- _footer.scss
-- _header.scss
+- Ajout et déclaration du fichier `scripts.js`
+- Modification du fichier `index.html` pour l'ajout de l'icône de menu hamburger + déclaration du fichier `scripts.js` en fin de page
+- modification du CSS dans `_menu.scss`

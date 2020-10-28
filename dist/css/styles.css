@@ -915,5 +915,131 @@ button[type="submit"] {
 
 .menu {
   visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 20;
+  background: #fff;
+  color: #161616;
+  opacity: 0;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
+@media (max-width: 1279.98px) {
+  .menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+.menu--open .menu {
+  visibility: visible;
+  opacity: 1;
+}
+
+.menu a {
+  color: #161616;
+  text-decoration: none;
+}
+
+.menu__socialNetworks {
+  margin-bottom: 100px;
+}
+
+.menu__contact {
+  display: none;
+}
+
+.contact__title {
+  text-transform: uppercase;
+  letter-spacing: 0.25rem;
+  color: #161616;
+  margin: 0 0 1rem;
+}
+
+.contact__item {
+  color: #A3A3A3;
+  background: #fff;
+  padding: 30px;
+}
+
+.contact a {
+  color: #A3A3A3;
+}
+
+/* Icone de menu hamburger */
+.hamburger {
+  position: absolute;
+  top: 44px;
+  right: 10vw;
+  width: 48px;
+  height: 48px;
+  z-index: 30;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.hamburger:hover .hamburger__line--1 {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+}
+
+.menu--open .hamburger:hover .hamburger__line--1 {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.hamburger__line {
+  background: #fff;
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  border-radius: 2px;
+  right: 0;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  -webkit-transform-origin: right;
+          transform-origin: right;
+}
+
+.hamburger__line--1 {
+  top: 33%;
+  -webkit-transform: scaleX(0.5);
+          transform: scaleX(0.5);
+}
+
+.hamburger__line--2 {
+  top: 66%;
+}
+
+.menu--open .hamburger__line {
+  background: #161616;
+}
+
+.menu--open .hamburger__line--1 {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  top: 85%;
+}
+
+.menu--open .hamburger__line--2 {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  top: 15%;
 }
 /*# sourceMappingURL=styles.css.map */

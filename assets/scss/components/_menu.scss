@@ -1,4 +1,113 @@
 .menu {
   visibility: hidden;
+  position: fixed;
+  top: 0; left: 0; bottom: 0; right: 0;
+  z-index: 20;
+  background: $white;
+  color: map-get($gray, 800);
+  opacity: 0;
+  transition: all .2s ease;
+
+  @include bp-down('md') {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .menu--open & {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  a {
+    color: map-get($gray, 800);
+    text-decoration: none;
+  }
+
+
+  &__socialNetworks {
+    margin-bottom: 100px;
+  }
+
+  &__contact {
+    display: none;
+  }
+}
+
+.contact {
+
+  &__title {
+    text-transform: uppercase;
+    letter-spacing: pxToRem(4);
+    color: map-get($gray, 800);
+    margin: 0 0 pxToRem(16);
+  }
+
+  &__item {
+    color: map-get($gray, 100);
+    background: $white;
+    padding: 30px;
+  }
+
+  a {
+    color: map-get($gray, 100);
+  }
+}
+
+/* Icone de menu hamburger */
+.hamburger {
+  position: absolute;
+  top: 44px;
+  right: 10vw;
+  width: 48px;
+  height: 48px;
+  z-index: 30;
+  background: none;
+  border: none;
+  cursor: pointer;
+  &:hover {
+    .hamburger__line--1 {
+      transform: scaleX(1);
+      .menu--open & {
+        transform: rotate(45deg);
+      }
+    }
+    
+  }
+}
+
+.hamburger__line {
+  background: $white;
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  border-radius: 2px;
+  right: 0;
+  transition: all .3s ease-in-out;
+  transform-origin: right;
+
+  &--1 {
+    top: 33%;
+    transform: scaleX(0.5);
+  }
+
+  &--2 {
+    top: 66%;
+  }
+
+  .menu--open & {
+    background: map-get($gray, 800);
+
+    &--1 {
+      transform: rotate(45deg);
+      top: 85%;
+    }
+    
+    &--2 {
+      transform: rotate(-45deg);
+      top: 15%;
+    }
+  }
 }
 
