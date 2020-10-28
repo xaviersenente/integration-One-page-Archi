@@ -5,12 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="Description" content="A+ Archi est une agence française d’architecture basée à Paris, Shanghai et Venise.">
   <title>A+ Archi</title>
-  
-
 </head>
 <body>
-  <header>
-    <h1>
+  <header class="header">
+    <h1 class="header__logo h3">
       <a href="#">
         <svg width="151" height="40" xmlns="http://www.w3.org/2000/svg">
           <title>A+ Archi</title>
@@ -21,55 +19,55 @@
     </h1>
 
     <div class="menu">
-      <nav>
-        <h2>Menu principal</h2>
-        <ul>
-          <li>
-            <a href="#">Home</a>
+      <nav class="menu__nav mainNav wrapper">
+        <h2 class="sr-only">Menu principal</h2>
+        <ul class="list-unstyled">
+          <li class="mainNav__item h2">
+            <a class="mainNav__link" href="#">Home</a>
           </li>
-          <li>
-            <a href="#">Agence</a>
+          <li class="mainNav__item h2">
+            <a class="mainNav__link" href="#">Agence</a>
           </li>
-          <li>
-            <a href="#">Projects</a>
+          <li class="mainNav__item h2">
+            <a class="mainNav__link" href="#">Projects</a>
           </li>
-          <li>
-            <a href="#">Contact</a>
+          <li class="mainNav__item h2">
+            <a class="mainNav__link" href="#">Contact</a>
           </li>
         </ul>
       </nav>
 
-      <ul>
-        <li>
-          <a href="http://facebook.com" title="Facebook">FB</a>
+      <ul class="menu__socialNetworks sn list-unstyled">
+        <li class="sn__item">
+          <a class="sn__link" href="http://facebook.com" title="Facebook">FB</a>
         </li>
-        <li>
-          <a href="http://twitter.com" title="Twitter">TW</a>
+        <li class="sn__item">
+          <a class="sn__link" href="http://twitter.com" title="Twitter">TW</a>
         </li>
-        <li>
-          <a href="http://youtube.com" title="Youtube">YT</a>
+        <li class="sn__item">
+          <a class="sn__link" href="http://youtube.com" title="Youtube">YT</a>
         </li>
       </ul>
 
-      <div>
+      <div class="menu__contact contact">
 
-        <div>
-          <p>Tél.</p>
+        <div class="contact__item">
+          <p class="contact__title">Tél.</p>
           <a href="tel:+33633224455">+33 6 33 22 44 55 </a>
         </div>
-        <div>
-          <p>Email</p>
+        <div class="contact__item">
+          <p class="contact__title">Email</p>
           <a href="mailto:archi@info.com">archi@info.com</a>
         </div>
-        <div>
-          <p>Siège social</p>
+        <div class="contact__item">
+          <p class="contact__title">Siège social</p>
           <address>
             Rue Saint Lazare,<br>
             75008 Paris, France
           </address>
         </div>
-        <div>
-          <p>Showroom</p>
+        <div class="contact__item">
+          <p class="contact__title">Showroom</p>
           <address>
             Rue Saint Lazare,<br>
             75008 Paris, France
@@ -84,54 +82,54 @@
 
   <div class="hero">
 
-    <div id="carousel">
+    <div id="carousel" class="carousel">
 
-      <article>
-        <header>
-          <p>2019 - Architecture</p>
-          <h2>Mega eco House</h2>
-          <a href="#">Voir le projet</a>
+      <article class="carousel__item carousel__item--current">
+        <header class="carousel__infos wrapper">
+          <p class="carousel__cat">2019 - Architecture</p>
+          <h2 class="carousel__title h1">Mega eco House</h2>
+          <a class="btn btn--underline carousel__btn" href="#">Voir le projet</a>
         </header>
-        <div>
-          <div>
+        <div class="carousel__img-container">
+          <div class="carousel__img-wrapper">
             <picture>
               <source srcset="img/carousel-1.webp" type="image/webp">
               <source srcset="img/carousel-1.jpg" type="image/jpeg"> 
-              <img src="img/carousel-1.jpg" alt="Mega eco House" width="1105" height="666">
+              <img class="carousel__img" src="img/carousel-1.jpg" alt="Mega eco House" width="1105" height="666">
             </picture>
           </div>
         </div>
       </article>
 
-      <article>
-        <header>
-          <p>2012 - Architecture</p>
-          <h2>Hoke house</h2>
-          <a href="#">Voir le projet</a>
+      <article class="carousel__item">
+        <header class="carousel__infos wrapper">
+          <p class="carousel__cat">2012 - Architecture</p>
+          <h2 class="carousel__title h1">Hoke house</h2>
+          <a class="btn btn--underline carousel__btn" href="#">Voir le projet</a>
         </header>
-        <div>
-          <div>
+        <div class="carousel__img-container">
+          <div class="carousel__img-wrapper">
             <picture>
               <source srcset="img/carousel-2.webp" type="image/webp">
               <source srcset="img/carousel-2.jpg" type="image/jpeg"> 
-              <img src="img/carousel-2.jpg" alt="Hoke house" width="1105" height="666">
+              <img class="carousel__img" src="img/carousel-2.jpg" alt="Hoke house" width="1105" height="666">
             </picture>
           </div>
         </div>
       </article>
 
-      <article>
-        <header>
-          <p>2021 - Architecture</p>
-          <h2>Mirror House</h2>
-          <a href="#">Voir le projet</a>
+      <article class="carousel__item">
+        <header class="carousel__infos wrapper">
+          <p class="carousel__cat">2021 - Architecture</p>
+          <h2 class="carousel__title h1">Mirror House</h2>
+          <a class="btn btn--underline carousel__btn" href="#">Voir le projet</a>
         </header>
-        <div>
-          <div>
+        <div class="carousel__img-container">
+          <div class="carousel__img-wrapper">
             <picture>
               <source srcset="img/carousel-3.webp" type="image/webp">
               <source srcset="img/carousel-3.jpg" type="image/jpeg"> 
-              <img src="img/carousel-3.jpg" alt="Mirror House" width="1105" height="666">
+              <img class="carousel__img" src="img/carousel-3.jpg" alt="Mirror House" width="1105" height="666">
             </picture>
           </div>
         </div>
@@ -141,15 +139,15 @@
     
     <div>
 
-      <div>
+      <div class="carousel__arrows arrows">
 
-        <button aria-label="précédent">
+        <button class="arrows__item arrows__item--prev" aria-label="précédent">
           <svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 100 100">
             <path d="M60 0 L10 50 L60 100 L65 95 L20 50 L65 5 Z"></path>
           </svg>
         </button>
 
-        <button aria-label="suivant">
+        <button class="arrows__item arrows__item--next" aria-label="suivant">
           <svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 100 100">
             <path d="M40 100 L90 50 L40 0 L35 5 L80 50 L35 95 Z"></path>
           </svg>
@@ -161,103 +159,103 @@
     
   </div>
 
-  <section>
+  <section class="agency wrapper">
 
-    <picture>
+    <picture class="agency__img">
       <source srcset="img/agency.webp" type="image/webp">
       <source srcset="img/agency.jpg" type="image/jpeg"> 
       <img src="img/agency.jpg" width="1410" height="1058" alt="Agence">
     </picture>
 
-    <header>
-      <h3>A+ Archi est une agence française d’architecture basée à Paris, Shanghai et Venise.</h3>
-      <p>Fondé sur le travail en groupe et les savoirs partagés, A+ Archi privilégie la volonté de dépasser l’individualité au profit du dialogue afin de transformer l’addition des savoirs individuels en un potentiel créatif démultiplié.</p>
-      <a href="#">À propos de l'agence</a>  
+    <header class="agency__header">
+      <h3 class="agency__title">A+ Archi est une agence française d’architecture basée à Paris, Shanghai et Venise.</h3>
+      <p class="agency__text">Fondé sur le travail en groupe et les savoirs partagés, A+ Archi privilégie la volonté de dépasser l’individualité au profit du dialogue afin de transformer l’addition des savoirs individuels en un potentiel créatif démultiplié.</p>
+      <a class="btn btn--underline agency__btn" href="#">À propos de l'agence</a>  
     </header>
 
-    <article>
+    <article class="agency__card card">
       <svg width="69" height="60" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path fill-rule="evenodd" clip-rule="evenodd" d="M6.499 3.34C6.499 1.755 7.835.6 9.316.6h51.032c1.482 0 2.817 1.154 2.817 2.74v53.578h4.27a1.4 1.4 0 110 2.8H7.95a1.404 1.404 0 01-.1 0H2.23a1.4 1.4 0 110-2.8H6.5V3.341zm2.8 53.578h5.705v-5.305c0-1.586 1.336-2.74 2.818-2.74h8.505c1.482 0 2.817 1.154 2.817 2.74v5.305h14.21v-13.29h-15.61c-2.264 0-4.235-1.755-4.235-4.082V19.491H9.3v37.427zm0-40.227h32.62c2.266 0 4.236 1.755 4.236 4.081v36.146h14.21V3.401a.105.105 0 00-.017-.001H9.3v13.29zm17.01 2.8v20.055c0 .636.568 1.282 1.435 1.282h15.61V20.772c0-.635-.567-1.281-1.434-1.281H26.31zm.035 37.427v-5.245a.11.11 0 00-.017 0h-8.523v5.245h8.54zM49.025 18.09a1.4 1.4 0 011.4-1.4h5.67a1.4 1.4 0 010 2.8h-5.67a1.4 1.4 0 01-1.4-1.4zm0 5.363a1.4 1.4 0 011.4-1.4h5.67a1.4 1.4 0 010 2.8h-5.67a1.4 1.4 0 01-1.4-1.4zM12.17 26.136a1.4 1.4 0 011.4-1.4h5.67a1.4 1.4 0 110 2.8h-5.67a1.4 1.4 0 01-1.4-1.4zm36.856 2.682a1.4 1.4 0 011.4-1.4h5.67a1.4 1.4 0 010 2.8h-5.67a1.4 1.4 0 01-1.4-1.4zM12.17 31.5a1.4 1.4 0 011.4-1.4h5.67a1.4 1.4 0 110 2.8h-5.67a1.4 1.4 0 01-1.4-1.4zm36.856 2.681a1.4 1.4 0 011.4-1.4h5.67a1.4 1.4 0 010 2.8h-5.67a1.4 1.4 0 01-1.4-1.4zM12.17 36.864a1.4 1.4 0 011.4-1.4h5.67a1.4 1.4 0 110 2.8h-5.67a1.4 1.4 0 01-1.4-1.4zm36.856 2.681a1.4 1.4 0 011.4-1.4h5.67a1.4 1.4 0 010 2.8h-5.67a1.4 1.4 0 01-1.4-1.4zM12.17 42.227a1.4 1.4 0 011.4-1.4h5.67a1.4 1.4 0 010 2.8h-5.67a1.4 1.4 0 01-1.4-1.4zm36.856 2.682a1.4 1.4 0 011.4-1.4h5.67a1.4 1.4 0 010 2.8h-5.67a1.4 1.4 0 01-1.4-1.4zm0 5.363a1.4 1.4 0 011.4-1.4h5.67a1.4 1.4 0 010 2.8h-5.67a1.4 1.4 0 01-1.4-1.4z" fill="#999"/>
       </svg>
-      <h3>Architecture</h3>
-      <p>L'art majeur de concevoir des espaces et de bâtir des édifices</p>
-      <a href="#">Suite</a>
+      <h3 class="card__title">Architecture</h3>
+      <p class="card__text">L'art majeur de concevoir des espaces et de bâtir des édifices</p>
+      <a class="card__btn btn btn--more" href="#">Suite</a>
     </article>
 
-    <article>
+    <article class="agency__card card">
       <svg width="63" height="59" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M61.675 1.967c.574 0 1.04-.44 1.04-.983 0-.544-.466-.984-1.04-.984H34.808c-1.03 0-2.024.361-2.787 1.015l-29.964 25.6c-1.09.933-1.713 2.258-1.714 3.65v3.168c0 .544.465.984 1.04.984.573 0 1.039-.44 1.039-.984v-3.169a2.888 2.888 0 011.028-2.19l4.17-3.562V47.2H1.383c-.575 0-1.04.44-1.04.983 0 .544.465.984 1.04.984h1.039v7.866C2.423 58.12 3.353 59 4.5 59h56.134c1.148-.001 2.078-.88 2.08-1.967V19.667c-.002-1.086-.932-1.966-2.08-1.967h-6.237V1.967h7.276zm-26.867 0h7.116V17.7h-6.237c-.574 0-1.04.44-1.04.983 0 .544.466.984 1.04.984h1.04v6.883c-.001.543-.467.983-1.04.983h-3.119V3.197l.847-.724a2.14 2.14 0 011.393-.506zM24.252 27.533c-.574 0-1.04.44-1.04.983 0 .544.466.984 1.04.984h1.04v6.883c-.001.543-.466.983-1.04.983h-3.119v-24.4l9.356-7.992v22.56h-6.237zM9.699 22.736l9.355-7.993v22.623h-6.237c-.574 0-1.04.44-1.04.984 0 .543.466.983 1.04.983h1.04v6.884c0 .543-.466.983-1.04.983H9.699V22.736zm32.225 34.297c-1.148-.001-2.078-.88-2.08-1.966v-5.9H50.24v5.9c-.001 1.086-.932 1.965-2.079 1.966h-6.237zm1.013-14.108a12.81 12.81 0 01-5.712-3.552 11.713 11.713 0 01-2.481-6.027 12.8 12.8 0 015.712 3.552 11.718 11.718 0 012.48 6.027zm.421-5.396a9.43 9.43 0 01.017-1.644A12.895 12.895 0 0146.4 29.27a12.699 12.699 0 011.65 7.035c-.035.351-.095.7-.18 1.043a13.636 13.636 0 00-1.41 3.535c-.006.013-.005.027-.01.04a15.68 15.68 0 00-.392 2.345h-.992c-.167-2-.747-3.95-1.708-5.738zm7.31-.63a12.86 12.86 0 015.716-3.55 11.675 11.675 0 01-2.485 6.024 12.87 12.87 0 01-5.715 3.55 11.678 11.678 0 012.484-6.025zm1.651 8.334l.001 1.967H37.766v-1.967h14.553zm8.316 11.8H51.74a3.733 3.733 0 00.58-1.966v-5.9c1.146-.002 2.077-.882 2.078-1.967v-1.967c-.001-1.085-.932-1.965-2.079-1.966h-.04a12.716 12.716 0 003.237-2.656c1.949-2.493 3.014-5.505 3.04-8.606a.966.966 0 00-.385-.748 1.086 1.086 0 00-.853-.2 16.455 16.455 0 00-7.174 3.502 15.97 15.97 0 00-2.717-7.533 1.05 1.05 0 00-.757-.423 1.085 1.085 0 00-.829.278c-2.268 2.232-3.807 5.037-4.43 8.076-2.105-1.94-4.738-3.29-7.605-3.9a1.083 1.083 0 00-.853.2.966.966 0 00-.385.748c.026 3.1 1.09 6.113 3.04 8.606a12.707 12.707 0 003.237 2.656h-1.08c-1.147 0-2.077.88-2.078 1.966V47.2c0 1.085.93 1.965 2.079 1.967v5.9c.004.692.204 1.371.578 1.966H4.5v-7.866h8.316c1.722-.002 3.117-1.322 3.119-2.95v-6.884h8.316c1.721-.002 3.117-1.321 3.119-2.95V29.5h8.316c1.721-.002 3.116-1.322 3.118-2.95v-6.883l14.549-.001h7.281v37.367zM52.32 17.7h-8.316V1.967h8.316V17.7z" fill="#999"/>
         <path d="M47.121 54.083h-4.158c-.574 0-1.04.44-1.04.984 0 .542.466.983 1.04.983h4.158c.574 0 1.04-.44 1.04-.983 0-.544-.466-.984-1.04-.984z" fill="#999"/>
       </svg>        
-      <h3>Design intérieur</h3>
-      <p>Concevoir l'architecture à l'échelle intime de la vie quotidienne</p>
-      <a href="#">Suite</a>
+      <h3 class="card__title">Design intérieur</h3>
+      <p class="card__text">Concevoir l'architecture à l'échelle intime de la vie quotidienne</p>
+      <a class="card__btn btn btn--more" href="#">Suite</a>
     </article>
 
-    <article>
+    <article class="agency__card card">
       <svg width="63" height="59" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M61.618 46.217c.575 0 1.04-.44 1.04-.983 0-.544-.466-.984-1.04-.984h-1.04c0-.543-.465-.983-1.039-.983-.574 0-1.04.44-1.04.983H41.868c0-.543-.465-.983-1.04-.983-.573 0-1.038.44-1.038.983h-1.04c-.574 0-1.04.44-1.04.983 0 .544.466.984 1.04.984h1.04v2.95h-1.04c-.574 0-1.04.44-1.04.983 0 .543.466.983 1.04.983h1.04v.984h-1.04c-.574 0-1.04.44-1.04.983 0 .543.466.983 1.04.983h1.04v2.95H22.116v-8.135a10.738 10.738 0 005.038 1.252c5.903-.08 10.625-4.665 10.555-10.25.032-3.882-2.26-7.448-5.919-9.207a8.655 8.655 0 001.841-5.353c.036-4.248-3.114-7.925-7.514-8.771a7.25 7.25 0 00-.51-7.18c-1.432-2.162-3.914-3.5-6.61-3.565-.03 0-.06.004-.09.005C18.353 2.445 15.253-.04 11.633 0c-3.62.04-6.657 2.592-7.127 5.987-2.632.478-4.45 2.77-4.196 5.294.253 2.524 2.494 4.452 5.174 4.452h6.06c.093.283.204.56.332.831-4.4.85-7.549 4.528-7.512 8.776a8.655 8.655 0 001.841 5.353C2.546 32.453.255 36.018.286 39.9c-.069 5.585 4.652 10.17 10.556 10.25 1.765-.002 3.5-.433 5.037-1.253v8.135H1.326c-.574 0-1.04.44-1.04.984 0 .543.466.983 1.04.983h60.292c.575 0 1.04-.44 1.04-.983 0-.543-.466-.984-1.04-.984h-1.04v-2.95h1.04c.575 0 1.04-.44 1.04-.983 0-.543-.466-.983-1.04-.983h-1.04v-.983h1.04c.575 0 1.04-.44 1.04-.984 0-.543-.466-.983-1.04-.983h-1.04v-2.95h1.04zm-50.457-32.79c0 .114.014.226.02.34H5.483c-1.722 0-3.119-1.32-3.119-2.95 0-1.63 1.397-2.95 3.12-2.95.275 0 .54-.104.734-.288a.957.957 0 00.305-.696c-.006-2.566 2.08-4.703 4.785-4.901 2.705-.2 5.115 1.607 5.529 4.143-3.39.98-5.699 3.949-5.677 7.302zm8.876 43.606h-2.079v-9.58c.373-.329.72-.682 1.04-1.056.32.374.667.727 1.04 1.055v9.581zm.127-12.495l6.845-6.476a.946.946 0 00-.006-1.384 1.082 1.082 0 00-1.463-.006l-5.503 5.204V31.874l4.893-4.629a.946.946 0 00-.004-1.386 1.082 1.082 0 00-1.466-.004l-3.423 3.238v-4.51c0-.543-.465-.983-1.04-.983-.573 0-1.039.44-1.039.983v4.51l-3.423-3.238a1.082 1.082 0 00-1.465.004.946.946 0 00-.005 1.386l4.893 4.63v10.001l-5.502-5.204a1.082 1.082 0 00-1.465.004.946.946 0 00-.005 1.386l6.846 6.476c-1.522 2.262-4.156 3.636-6.99 3.646-4.756-.08-8.547-3.784-8.477-8.283-.044-3.558 2.333-6.74 5.893-7.888.344-.107.605-.376.687-.71a.948.948 0 00-.284-.924c-1.429-1.327-2.229-3.145-2.218-5.039-.068-3.752 3.07-6.857 7.035-6.963.429.036.84-.174 1.042-.534a.937.937 0 00-.09-1.026 5.498 5.498 0 01-1.19-3.39c-.05-3.059 2.525-5.58 5.758-5.636 3.233.057 5.808 2.577 5.757 5.636a5.498 5.498 0 01-1.19 3.39.933.933 0 00-.073 1.025c.183.332.547.54.943.539 3.995.068 7.178 3.18 7.117 6.96.011 1.893-.79 3.71-2.218 5.038a.948.948 0 00-.284.924c.083.334.343.603.687.71 3.993 1.32 6.427 5.142 5.795 9.098-.632 3.956-4.151 6.927-8.378 7.073-2.834-.01-5.468-1.384-6.99-3.646zM58.5 57.033H41.867v-2.95H58.5v2.95zm0-4.916H41.867v-.983H58.5v.983zm0-2.95H41.867v-2.95H58.5v2.95zM44.987 24.58h12.474c2.68 0 4.921-1.927 5.175-4.451.253-2.524-1.564-4.817-4.197-5.294-.475-3.426-3.562-5.987-7.215-5.987-3.652 0-6.74 2.561-7.215 5.987-2.632.477-4.45 2.77-4.196 5.294.253 2.524 2.494 4.452 5.174 4.452zm0-7.866c.276 0 .54-.103.735-.288a.957.957 0 00.305-.695c0-2.716 2.327-4.917 5.197-4.917s5.198 2.201 5.198 4.917c0 .26.11.51.305.695.194.185.459.288.735.288 1.722 0 3.118 1.321 3.118 2.95 0 1.63-1.396 2.95-3.118 2.95H44.987c-1.722 0-3.118-1.32-3.118-2.95 0-1.63 1.396-2.95 3.118-2.95z" fill="#999"/>
       </svg>
-      <h3>Paysages</h3>
-      <p>Concevoir des projets d'aménagements extérieurs</p>
-      <a href="#">Suite</a>
+      <h3 class="card__title">Paysages</h3>
+      <p class="card__text">Concevoir des projets d'aménagements extérieurs</p>
+      <a class="card__btn btn btn--more" href="#">Suite</a>
     </article>
 
   </section>
 
-  <section>
+  <section class="projects wrapper">
 
-    <header>
-      <h2>Nos<br>projets</h2>
-      <a href="#">Voir tous les projets</a>
+    <header class="projects__header">
+      <h2 class="projects__title">Nos<br>projets</h2>
+      <a class="projects__link btn btn--underline" href="#">Voir tous les projets</a>
     </header>
 
-    <div>
+    <div class="projects__carousel carouselFkty">
 
-      <article>
-        <a href="#">
-          <h3>La maison transparente</h3>
+      <article class="carouselFkty__item">
+        <a class="carouselFkty__link" href="#">
+          <h3 class="carouselFkty__title h4">La maison transparente</h3>
           <picture>
             <source srcset="img/projet-01.webp" type="image/webp">
             <source srcset="img/projet-01.jpg" type="image/jpeg"> 
-            <img src="img/projet-01.jpg" alt="La maison transparente" width="1200" height="885">
+            <img class="carouselFkty__img" src="img/projet-01.jpg" alt="La maison transparente" width="1200" height="885">
           </picture>
         </a>
       </article>
 
-      <article>
-        <a href="#">
-          <h3>Tiny House</h3>
+      <article class="carouselFkty__item">
+        <a class="carouselFkty__link" href="#">
+          <h3 class="carouselFkty__title h4">Tiny House</h3>
           <picture>
             <source srcset="img/projet-02.webp" type="image/webp">
             <source srcset="img/projet-02.jpg" type="image/jpeg"> 
-            <img src="img/projet-02.jpg" alt="Tiny House" width="1200" height="885">
+            <img class="carouselFkty__img" src="img/projet-02.jpg" alt="Tiny House" width="1200" height="885">
           </picture>
         </a>
       </article>
 
-      <article>
-        <a href="#">
-          <h3>Off-Grid Guesthouse</h3>
+      <article class="carouselFkty__item">
+        <a class="carouselFkty__link" href="#">
+          <h3 class="carouselFkty__title h4">Off-Grid Guesthouse</h3>
           <picture>
             <source srcset="img/projet-03.webp" type="image/webp">
             <source srcset="img/projet-03.jpg" type="image/jpeg"> 
-            <img src="img/projet-03.jpg" alt="Off-Grid Guesthouse" width="1200" height="885">
+            <img class="carouselFkty__img" src="img/projet-03.jpg" alt="Off-Grid Guesthouse" width="1200" height="885">
           </picture>
         </a>
       </article>
 
     </div>
 
-    <div>
+    <div class="projects__arrows arrows">
 
-      <button aria-label="précédent">
+      <button class="arrows__item arrows__item--border arrows__item--prev" aria-label="précédent">
         <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 100 100">
           <path d="M60 0 L10 50 L60 100 L65 95 L20 50 L65 5 Z"></path>
         </svg>
       </button>
 
-      <button aria-label="suivant">
+      <button class="arrows__item arrows__item--border arrows__item--next" aria-label="suivant">
         <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 100 100">
           <path d="M40 100 L90 50 L40 0 L35 5 L80 50 L35 95 Z"></path>
         </svg>
@@ -267,107 +265,106 @@
 
   </section>
 
-  <section>
+  <section class="actu wrapper">
 
-    <header>
-      <h2>Notre actualité</h2>
-      <a href="#">Voir toutes les actus</a>
+    <header class="actu__header">
+      <h2 class="actu__title">Notre actualité</h2>
+      <a class="actu__link btn btn--underline" href="#">Voir toutes les actus</a>
     </header>
 
-    <article>
-      <a href="#">
+    <article class="actu__news news">
+      <a class="news__link" href="#">
         <picture>
           <source srcset="img/actu-1.webp" type="image/webp">
           <source srcset="img/actu-1.jpg" type="image/jpeg"> 
-          <img src="img/actu-1.jpg" alt="Alt Text!" width="740" height="986">
+          <img class="news__img" src="img/actu-1.jpg" alt="Alt Text!" width="740" height="986">
         </picture>
-        <span>Suite</span>
+        <span class="news__more btn btn--more">Suite</span>
       </a>
-      <p>
+      <p class="news__cat">
         <a href="#">Interior</a>
       </p>
-      <h3>
+      <h3 class="news__title h4">
         <a href="#">5 conseils pour transformer votre habitation en maison connectée</a>
       </h3>
     </article>
 
-    <article>
-      <a href="#">
+    <article class="actu__news news">
+      <a class="news__link" href="#">
         <picture>
           <source srcset="img/actu-2.webp" type="image/webp">
           <source srcset="img/actu-2.jpg" type="image/jpeg"> 
-          <img src="img/actu-2.jpg" alt="Alt Text!" width="740" height="986">
+          <img class="news__img" src="img/actu-2.jpg" alt="Alt Text!" width="740" height="986">
         </picture>
-        <span>Suite</span>
+        <span class="news__more btn btn--more">Suite</span>
       </a>
-      <p>
+      <p class="news__cat">
         <a href="#">Interior</a>
       </p>
-      <h3>
+      <h3 class="news__title h4">
         <a href="#">5 conseils pour transformer votre habitation en maison connectée</a>
       </h3>
     </article>
 
-    <article>
-      <a href="#">
+    <article class="actu__news news">
+      <a class="news__link" href="#">
         <picture>
           <source srcset="img/actu-3.webp" type="image/webp">
           <source srcset="img/actu-3.jpg" type="image/jpeg"> 
-          <img src="img/actu-3.jpg" alt="Alt Text!" width="740" height="986">
+          <img class="news__img" src="img/actu-3.jpg" alt="Alt Text!" width="740" height="986">
         </picture>
-        <span>Suite</span>
+        <span class="news__more btn btn--more">Suite</span>
       </a>
-      <p>
+      <p class="news__cat">
         <a href="#">Interior</a>
       </p>
-      <h3>
+      <h3 class="news__title h4">
         <a href="#">5 conseils pour transformer votre habitation en maison connectée</a>
       </h3>
     </article>
 
   </section>
 
-  <footer>
+  <footer class="footer wrapper">
 
-    <div>
+    <div class="footer__contact">
       <h3>A+ Archi</h3>
       <p><a href="tel:+33633224455">+33 6 33 22 44 55</a></p>
       <p><a href="mailto:archi@info.com">archi@info.com</a></p>
       <address>Paris, France</address>
     </div>
 
-    <div>
-      <h3>Site map</h3>
-      <nav>
-        <h4>Menu secondaire</h4>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Agence</a></li>
-          <li><a href="#">Projets</a></li>
-          <li><a href="#">Contact</a></li>
+    <div class="footer__menu">
+      <h3 class="h4">Site map</h3>
+      <nav class="footer__nav">
+        <h4 class="sr-only">Menu secondaire</h4>
+        <ul class="list-unstyled">
+          <li class="footer__navItem"><a href="#">Home</a></li>
+          <li class="footer__navItem"><a href="#">Agence</a></li>
+          <li class="footer__navItem"><a href="#">Projets</a></li>
+          <li class="footer__navItem"><a href="#">Contact</a></li>
         </ul>
       </nav>
     </div>
 
-    <div>
+    <div class="footer__newsletter">
       <h3>Avez-vous un projet ?</h3>
       <p>Laissez votre email et nous vous contacterons dans les plus brefs délais</p>
-      <form action="#" method="POST">
+      <form class="form form--newsletter" action="#" method="POST">
         <input type="email" id="mail" placeholder="Votre email" aria-label="email"/>
         <button type="submit">Envoyer</button>
       </form>
     </div>
 
-    <div>
-      <p>@2020 A+ Archi.</p>
-      <ul>
-        <li><a href="http://faceebook.com">FB</a></li>
-        <li><a href="http://twitter.com">TW</a></li>
-        <li><a href="http://youtube.com">YT</a></li>
+    <div class="footer__sub">
+      <p class="footer__copyright">@2020 A+ Archi.</p>
+      <ul class="list-unstyled sn">
+        <li><a class="sn__item" href="http://faceebook.com">FB</a></li>
+        <li><a class="sn__item" href="http://twitter.com">TW</a></li>
+        <li><a class="sn__item" href="http://youtube.com">YT</a></li>
       </ul>
     </div>
 
   </footer>
-  <script src="js/scripts.js"></script>
 </body>
 </html>
