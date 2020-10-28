@@ -1,33 +1,64 @@
-# La méthodologie BEM
 
-Trouver des noms de classes étant à la fois explicites, mais ni trop génériques, ni trop précis n’est pas toujours évident.  
-C’est pour répondre à ces problématiques et simplifier l’écriture du CSS que plusieurs méthodologies ont été créées, dont [BEM](https://en.bem.info/) que nous utiliserons ici.
+# Utiliser un pré-processeur CSS (SASS)
 
-## Principe
+Un **préprocesseur**  **CSS** est un programme qui interprète votre code source pour générer un code standard du web : le CSS. Il y a de nombreux préprocesseurs CSS au choix, mais la plupart des préprocesseurs CSS ajoutent quelques fonctionnalités qui n'existent pas en CSS pur, telles que variable, mixin, sélecteur d'imbrication, etc. Ces fonctionnalités rendent la structure CSS plus lisible et plus facile à maintenir.
 
-La méthodologie  [BEM](https://en.bem.info/)  repose sur un principe, qu’est la composition d’une page web en différents types d’entités :
+Pour utiliser un préprocesseur CSS, il faut installer un compilateur.
 
-**Block :**  c’est un composant générique, ou “parent”, contenant un ou plusieurs  _elements_  (notre deuxième type de composants). Celui-ci est une partie “globale” de la page, lorsqu’un  _block_  est retiré du contexte de la page, il garde toujours du sens.
+Pour simplifier les choses nous allons utiliser un plugin sur Visual Studio Code qui se chargera de compiler notre code CSS : [Live Sass Compiler](https://marketplace.visualstudio.com/items?itemName=ritwickdey.live-sass).
 
-**Element :**  le second composant est un  _element_, celui-ci est plus spécifique et précis que le  _block_. Un  _element_  ne peut pas être utilisé en dehors de son  _block_  parent.
+Commencez par installer ce plugin sur VSC.
 
-**Modifier :**  c’est une entité qui définit l’apparence d’un composant (_block_  ou  _element_).  
+Pour spécifier l'endroit où le code CSS doit être compilé, créer un répertoire de configuration `.vscode` avec un fichier `settings.json` à l'intérieur et les lignes de code suivantes :
+```json
+{
+	"liveSassCompile.settings.formats": [
+		{
+			"format": "expanded",
+			"extensionName": ".css",
+			"savePath": "/dist/css/"
+		}
+	],
+	"liveServer.settings.port": 5503
+}
+```
+  
 
-## Conventions de nommage
+Voici l'organisation des fichiers SCSS (dans le dossier `assets`/`scss`) :
+-  `base` => Les propriétés de base
+	-  `_main.scss`
+	-  `_sections.scss`
+	-  `_typography.scss`
+-  `components` => les composants de l'interface
+	-  `_btn.scss`
+	-  `_card.scss`
+	-  `_carousel.scss`
+	-  `_form.scss`
+	-  `_menul.scss`
+-  `layout` => les éléments de composition générale
+	-  `_footer.scss`
+	-  `_grid.scss`
+	-  `_header.scss`
+-  `utils` => les fonctions, mixins, variables
+	-  `_functions.scss`
+	-  `_mixins.scss`
+	-  `_variables.scss`
+-  `vendors` => les librairies css
+	-  `_flickity.scss`
+	-  `_normalise.scss`
 
-Afin de rendre les noms de classes le plus compréhensible possible, des conventions de nommage sont utilisées, ce qui permet d’avoir une syntaxe similaire partout dans le code (CSS, JavaScript & HTML).
+Pour tester la compilation :
 
-**Block :**  au sein même d’un nom de  _block_, c’est le “kebab case” (ou spinal case) qui est utilisé. C’est-à-dire que la séparation des mots se fait grâce à des tirets (dashes), comme ceci :
+=> dans le fichier `_variables.scss` :
 
--   `block-name`
+```scss
+$color: red;
+```
+=> dans le fichier `_main.scss` :
+```scss
+body {
+	color: $color;
+}
+```
 
-**Element :**  comme pour le  _block_, c’est le “kebab case” que l’on utilise dans le nom d’un élément. En revanche, étant donné qu’un élément fait partie d’un bloc, on doit spécifier le nom du bloc parent avant le nom de l’élément. Ce qui donne le résultat suivant :
-
--   `block-name__element-name`
-
-**Modifier :** Tout comme les  _blocks_  et  _elements_, la convention au sein du nom d’un  _modifier_  est également le “kebab case”.
-
--   `block-name--modifier-name`
--   `block-name__element-name--modifier-name`
-
-La séparation entre chaque composant se fait en “snake case”, mais de façon un peu particulière. En effet, ce n’est pas un mais deux underscores qui sont utilisés. La séparation entre un composant et un  _modifier_  se fait quant à elle grâce à deux tirets. Cette différence permet d’un simple coup d’oeil de faire la différence entre un  _element_  et un  _modifier_.
+puis cliquez sur le bouton "*Watch Sass*" dans la barre bleu en bas de VSC.

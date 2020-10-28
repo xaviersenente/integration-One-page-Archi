@@ -1,0 +1,25 @@
+{
+    "version": 3,
+    "mappings": "AAAA,OAAO,CAAC,gOAAI;AOAZ,AAAA,IAAI,CAAC;EACH,KAAK,EJDC,GAAG;CIEV",
+    "sources": [
+        "../../assets/scss/styles.scss",
+        "../../assets/scss/vendors/_normalize.scss",
+        "../../assets/scss/vendors/_flickity.scss",
+        "../../assets/scss/utils/_variables.scss",
+        "../../assets/scss/utils/_functions.scss",
+        "../../assets/scss/utils/_mixins.scss",
+        "../../assets/scss/base/_typography.scss",
+        "../../assets/scss/base/_main.scss",
+        "../../assets/scss/base/_sections.scss",
+        "../../assets/scss/layout/_grid.scss",
+        "../../assets/scss/layout/_header.scss",
+        "../../assets/scss/layout/_footer.scss",
+        "../../assets/scss/components/_btn.scss",
+        "../../assets/scss/components/_card.scss",
+        "../../assets/scss/components/_carousel.scss",
+        "../../assets/scss/components/_form.scss",
+        "../../assets/scss/components/_menu.scss"
+    ],
+    "names": [],
+    "file": "styles.css"
+}
