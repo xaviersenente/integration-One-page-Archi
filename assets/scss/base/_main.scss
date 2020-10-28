@@ -6,3 +6,48 @@ body {
   @include fluid-type($body);
   line-height: 1.8;
 }
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: $tonic;
+}
+
+address {
+  font-style: normal;
+}
+
+.noscroll,
+.noscroll body {
+  overflow: hidden;
+}
+
+.list-unstyled {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.wrapper {
+  padding-right: $container-margin;
+  padding-left: $container-margin;
+}
+

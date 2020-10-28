@@ -1,0 +1,26 @@
+.form--newsletter {
+  display: flex;
+  justify-content: space-between;
+  margin-top: pxToRem(60);
+  border-bottom: 1px solid $white;
+}
+
+input {
+  flex: 1;
+  background: none;
+  border: none;
+  padding: pxToRem(16) 0;
+  color: $white;
+}
+
+button[type="submit"] {
+  background: none;
+  border: none;
+  color: $tonic;
+  text-transform: uppercase;
+}
+
+:focus {
+  outline: 0;
+  background: none;
+}

@@ -1,32 +1,19 @@
+# Mobile first
 
-# Utilitaires
+Le Mobile First est un concept qui consiste à concevoir un site en mettant la priorité sur la version mobile et en adaptant progressivement le web design pour les écrans plus large.
 
-Mise en place des utilitaires SASS dans le répertoire `utils`
+Du point de vue du code cela a d'autant plus de pertinence que ce dernier est plus simple en règle générale dans sa version mobile. On ajoute ensuite de la complexité (grille, effets de survol…) pour les versions étendues.
 
-## Variables
+Un peu de lecture sur le sujet : [https://abookapart.com/products/mobile-first](https://abookapart.com/products/mobile-first)
 
-Mise en place des variables
-(https://sass-lang.com/documentation/variables)
-- Couleurs
-- Typographie (https://css-tricks.com/snippets/css/fluid-typography/)
-- Points de rupture (Breakpoints)
-- Grille
-  
-## Fonctions
-Mise en place des fonctions
-(https://sass-lang.com/documentation/values/functions)
-  
-- Fonction pour convertir les px en REM
-- Fonction pour retourner une valeur sans son unité de mesure
-- Fonctions pour les Breakpoints (repris de Bootstrap)
-
-## Mixins
-
-Mise en place des mixins
-(https://sass-lang.com/documentation/at-rules/mixin)
-- Mixin qui permet de rendre la taille de typographie fluide (https://css-tricks.com/snippets/css/fluid-typography/)
-- Mixins pour les Breakpoints (repris de Bootstrap)
-
-# Normalize
-
-Chargement du [code css normalize](https://necolas.github.io/normalize.css/) dans le partial `_normalize.scss` (dans `vendors`)
+Faire le code CSS pour les éléments suivants :
+- _main.scss
+- _sections.scss
+- _typography.scss
+- _btn.scss
+- _card.scss
+- _carousel.scss
+- _form.scss
+- _menu.scss (pour l'instant, le masquer simplement avec un `display: none;`)
+- _footer.scss
+- _header.scss

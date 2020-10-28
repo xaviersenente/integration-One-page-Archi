@@ -1,0 +1,15 @@
+.card {
+  text-align: center;
+  background: map-get($gray, 600 );
+  padding: pxToRem(50);
+  margin: pxToRem(20) 0;
+
+  &__title {
+    text-transform: uppercase;
+    margin-top: pxToRem(56);
+  }
+  
+  &__text {
+    margin-bottom: pxToRem(40);
+  }
+}

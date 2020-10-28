@@ -1,0 +1,60 @@
+section {
+  padding: pxToRem(60) 0;
+}
+
+.hero {
+  background-color: map-get($gray, 600);
+  position: relative;
+}
+
+.news {
+  margin-top: pxToRem(80);
+
+  &__title {
+    a { 
+      color: $white;
+      text-decoration: none;
+    }
+  }
+
+  &__cat {
+    a { 
+      color: map-get($gray, 100);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+  }
+
+  &__more {
+    background-color: map-get($gray, 400);
+    position: absolute;
+    bottom: 0; right: 0;
+    padding: pxToRem(10) 0 0 pxToRem(20);
+  }
+
+  &__img {
+    display: block;
+  }
+}
+
+.projects {
+  background: map-get($gray, 300) url("img/topography.svg");
+  background-size: 1000px;
+
+  &__title {
+    margin-bottom: pxToRem(60);
+  }
+
+  &__carousel {
+    margin-left: -20px;
+    margin-right: -20px;
+    @include outsideRight;
+  }
+
+}

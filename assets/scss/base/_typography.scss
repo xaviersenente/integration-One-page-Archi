@@ -1,0 +1,40 @@
+
+p {
+	margin-bottom: pxToRem(20);
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4 {
+	font-family: $heading-font;
+	margin: pxToRem(20) 0 pxToRem(16);
+	color: $white;
+}
+
+h1, .h1 {
+	margin-top: 0;
+	@include fluid-type($heading-1);
+	line-height: 1.1;
+	font-weight: 700;
+	letter-spacing: pxToRem(2);
+}
+
+h2, .h2 {
+	@include fluid-type($heading-2);
+	line-height: 1.1;
+	font-weight: 700;
+	letter-spacing: pxToRem(2);
+}
+
+h3, .h3 {
+	@include fluid-type($heading-3);
+	font-weight: 600;
+	letter-spacing: pxToRem(1);
+}
+
+h4, .h4 {
+	@include fluid-type($heading-4);
+	font-weight: 600;
+	letter-spacing: pxToRem(1);
+}

@@ -1,0 +1,29 @@
+.header {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 11;
+
+  &__logo {
+    grid-column: span 3;
+    margin-top: 44px;
+    z-index: 30;
+
+    a {
+      display: inline-block;
+      color: $white;
+      text-decoration: none;
+      .menu--open & {
+        color: map-get($gray, 800);
+      }
+    }
+    
+    svg {
+      fill: $white;
+      .menu--open & {
+        fill: map-get($gray, 800);
+      }
+    }
+  }
+}
