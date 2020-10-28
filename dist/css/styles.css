@@ -671,13 +671,88 @@ address {
   padding-left: 20px;
 }
 
+@media (min-width: 768px) {
+  .wrapper {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
 section {
   padding: 3.75rem 0;
+}
+
+@media (min-width: 768px) {
+  section {
+    padding: 7.5rem 0;
+  }
 }
 
 .hero {
   background-color: #333333;
   position: relative;
+}
+
+@media (min-width: 768px) {
+  .agency {
+    position: relative;
+  }
+  .agency__header {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 5;
+    grid-column: 2 / span 5;
+  }
+  .agency__title {
+    margin-top: 0;
+  }
+  .agency__text, .agency__btn {
+    margin-left: 21.5%;
+  }
+  .agency__img {
+    -ms-grid-column: 7;
+    -ms-grid-column-span: 6;
+    grid-column: 7 / span 6;
+  }
+}
+
+@media (min-width: 768px) and (min-width: 768px) {
+  .agency__img {
+    margin-right: -20px;
+  }
+}
+
+@media (min-width: 768px) and (min-width: 1280px) {
+  .agency__img {
+    margin-right: calc((1240px - 100vw)/2);
+  }
+}
+
+@media (min-width: 768px) {
+  .agency::before {
+    content: '';
+    position: absolute;
+    border-top: 1px solid #A3A3A3;
+    -ms-grid-row: 1;
+    grid-row: 1;
+    width: calc( ( 100vw - 1240px ) / 2);
+  }
+}
+
+@media (min-width: 768px) {
+  .actu__header {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
+    grid-column: 1 / span 12;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
 
 .news {
@@ -711,11 +786,34 @@ section {
 
 .news__img {
   display: block;
+  -webkit-transition: -webkit-transform .5s ease-in-out;
+  transition: -webkit-transform .5s ease-in-out;
+  transition: transform .5s ease-in-out;
+  transition: transform .5s ease-in-out, -webkit-transform .5s ease-in-out;
+}
+
+.news__link:hover .news__img {
+  -webkit-transform: scale(1.06);
+          transform: scale(1.06);
+}
+
+@media (min-width: 768px) {
+  .news {
+    margin-top: 2.5rem;
+  }
 }
 
 .projects {
   background: #414141 url("img/topography.svg");
   background-size: 1000px;
+}
+
+@media (min-width: 768px) {
+  .projects__header {
+    grid-column: span 3;
+    -ms-grid-row: 1;
+    grid-row: 1;
+  }
 }
 
 .projects__title {
@@ -729,6 +827,17 @@ section {
 
 @media (min-width: 768px) {
   .projects__carousel {
+    -ms-grid-column: 4;
+    -ms-grid-column-span: 9;
+    grid-column: 4 / span 9;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    grid-row: 1 / span 2;
+  }
+}
+
+@media (min-width: 768px) {
+  .projects__carousel {
     margin-right: -20px;
   }
 }
@@ -736,6 +845,17 @@ section {
 @media (min-width: 1280px) {
   .projects__carousel {
     margin-right: calc((1240px - 100vw)/2);
+  }
+}
+
+@media (min-width: 768px) {
+  .projects__arrows {
+    grid-column: span 3;
+    -ms-grid-row: 2;
+    grid-row: 2;
+    -ms-flex-item-align: end;
+        -ms-grid-row-align: end;
+        align-self: end;
   }
 }
 
@@ -938,6 +1058,12 @@ body.show::before {
   border-top: 1px solid #3A3A3A;
 }
 
+@media (min-width: 768px) {
+  .footer__sub {
+    grid-column: span 12;
+  }
+}
+
 .sn {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -976,6 +1102,14 @@ body.show::before {
   transition: height .25s ease-in-out;
 }
 
+.btn--underline:hover {
+  color: #333333;
+}
+
+.btn--underline:hover::after {
+  height: 100%;
+}
+
 .btn--more::after {
   content: "+";
   margin-left: 0.625rem;
@@ -1000,6 +1134,12 @@ body.show::before {
 .carousel {
   height: 100vh;
   position: relative;
+}
+
+@media (min-width: 768px) {
+  .carousel {
+    height: 70vh;
+  }
 }
 
 .carousel__item {
@@ -1027,10 +1167,39 @@ body.show::before {
   bottom: 25%;
 }
 
+@media (min-width: 768px) {
+  .carousel__infos {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 5;
+    grid-column: 1 / span 5;
+  }
+}
+
 .carousel__img-container {
   overflow: hidden;
   height: 100vh;
   position: relative;
+}
+
+@media (min-width: 768px) {
+  .carousel__img-container {
+    height: 70vh;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 10;
+    grid-column: 3 / span 10;
+  }
+}
+
+@media (min-width: 768px) and (min-width: 768px) {
+  .carousel__img-container {
+    margin-right: -20px;
+  }
+}
+
+@media (min-width: 768px) and (min-width: 1280px) {
+  .carousel__img-container {
+    margin-right: calc((1240px - 100vw)/2);
+  }
 }
 
 .carousel__img-wrapper {
@@ -1048,6 +1217,12 @@ body.show::before {
   z-index: 1;
 }
 
+@media (min-width: 768px) {
+  .carousel__img-wrapper::before {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+}
+
 .carousel__img {
   width: 100%;
   height: 100%;
@@ -1062,6 +1237,15 @@ body.show::before {
   z-index: 2;
 }
 
+@media (min-width: 768px) {
+  .carousel__arrows {
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 3;
+    grid-column: 3 / span 3;
+    position: static;
+  }
+}
+
 .carouselFkty__item {
   width: 70%;
   padding: 30px 20px;
@@ -1070,6 +1254,16 @@ body.show::before {
 .carouselFkty__link {
   display: inline-block;
   position: relative;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  transition: -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  /**
+    /* technique pour optimiser l'animation de l'ombre : 
+    /* @link https://tobiasahlin.com/blog/how-to-animate-box-shadow/
+    **/
 }
 
 .carouselFkty__link::before {
@@ -1081,6 +1275,31 @@ body.show::before {
   right: 0;
   background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.8)), color-stop(25%, rgba(0, 0, 0, 0)));
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 25%);
+}
+
+.carouselFkty__link::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 12px 26px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 12px 26px rgba(0, 0, 0, 0.3);
+  -webkit-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.carouselFkty__link:hover {
+  -webkit-transform: translateY(-4px);
+          transform: translateY(-4px);
+}
+
+.carouselFkty__link:hover::after {
+  opacity: 1;
 }
 
 .carouselFkty__title {
@@ -1118,6 +1337,13 @@ body.show::before {
   transition: .3s ease;
 }
 
+@media (min-width: 768px) {
+  .arrows__item {
+    width: 80px;
+    height: 80px;
+  }
+}
+
 .arrows__item--border {
   border: 1px solid #666666;
 }
@@ -1132,6 +1358,17 @@ body.show::before {
   opacity: 0.5;
   -webkit-transition: all .25s ease;
   transition: all .25s ease;
+}
+
+.arrows__item:hover {
+  cursor: pointer;
+  border-color: #fff;
+  position: relative;
+  z-index: 1;
+}
+
+.arrows__item:hover svg {
+  opacity: 1;
 }
 
 .form--newsletter {
@@ -1210,12 +1447,69 @@ button[type="submit"] {
   text-decoration: none;
 }
 
+@media (min-width: 768px) {
+  .menu__nav {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 4;
+    grid-column: 1 / span 4;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 2;
+    grid-row: 2 /span 2;
+  }
+}
+
 .menu__socialNetworks {
   margin-bottom: 100px;
 }
 
+@media (min-width: 768px) {
+  .menu__socialNetworks {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 4;
+    grid-column: 1 / span 4;
+    -ms-grid-row: 3;
+    grid-row: 3;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+  }
+}
+
 .menu__contact {
   display: none;
+}
+
+@media (min-width: 768px) {
+  .menu__contact {
+    display: -ms-grid;
+    display: grid;
+    background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(255, 255, 255, 0.95)), to(rgba(255, 255, 255, 0.95))), url("img/topography.svg");
+    background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.95) 100%), url("img/topography.svg");
+    background-size: 1000px;
+    -ms-grid-column: 6;
+    -ms-grid-column-span: 7;
+    grid-column: 6 / span 7;
+    -ms-grid-row: 3;
+    grid-row: 3;
+    padding: 50px 20%;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    -ms-grid-rows: (minmax(0, 150px))[2];
+        grid-template-rows: repeat(2, minmax(0, 150px));
+    -ms-flex-line-pack: center;
+        align-content: center;
+  }
+}
+
+@media (min-width: 768px) and (min-width: 768px) {
+  .menu__contact {
+    margin-right: -20px;
+  }
+}
+
+@media (min-width: 768px) and (min-width: 1280px) {
+  .menu__contact {
+    margin-right: calc((1240px - 100vw)/2);
+  }
 }
 
 .contact__title {

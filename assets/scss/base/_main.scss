@@ -49,5 +49,10 @@ address {
 .wrapper {
   padding-right: $container-margin;
   padding-left: $container-margin;
+  
+  @include bp-up('md') {
+    padding-right: 0;
+    padding-left: 0;
+  }
 }
 

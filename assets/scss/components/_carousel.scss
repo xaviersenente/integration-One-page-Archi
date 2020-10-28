@@ -3,6 +3,10 @@
   height: 100vh;
   position: relative;
 
+  @include bp-up('md') {
+    height: 70vh;
+  }
+
   &__item { 
     overflow: hidden;
     opacity: 0;
@@ -27,12 +31,22 @@
     position: absolute;
     z-index: 2;
     bottom: 25%;
+
+    @include bp-up('md') {
+      grid-column: 1 / span 5;
+    }
   }
 
   &__img-container {
     overflow: hidden;
     height: 100vh;
     position: relative;
+
+    @include bp-up('md') {
+      height: 70vh;
+      grid-column: 3 / span 10;
+      @include outsideRight;
+    }
   }
 
   
@@ -47,6 +61,9 @@
       right: 0;
       background-color: rgba(0,0,0,0.6);
       z-index: 1;
+      @include bp-up('md') {
+        background-color: rgba(0,0,0,0.3);
+      }
     }
   }
 
@@ -61,26 +78,55 @@
     position: absolute;
     bottom: 0;
     z-index: 2;
+    @include bp-up('md') {
+      grid-column: 3 / span 3;
+      position: static;
+    }
   }
 }
 
 
 
-.carouselFkty {
+.carouselFkty{
   &__item {
     width: 70%;
     padding: 30px 20px;
+    
   }
   
   &__link {
     display: inline-block;
     position: relative;
+    transform: translateY(0);
+    transition: transform 0.3s ease-in-out;
 
     &::before {
       content: "";
       position: absolute;
       top: 0; bottom: 0; left: 0; right: 0;
       background: linear-gradient(0deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 25%);
+    }
+    /**
+    /* technique pour optimiser l'animation de l'ombre : 
+    /* @link https://tobiasahlin.com/blog/how-to-animate-box-shadow/
+    **/
+    &::after {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      border-radius: 5px;
+      box-shadow: 0px 12px 26px rgba(0,0,0,0.3);
+      transition: opacity 0.3s ease-in-out;
+    }
+    &:hover {
+      transform: translateY(-4px);
+      &::after {
+        opacity: 1;
+      }
     }
     
   }
@@ -109,6 +155,10 @@
     justify-content: center;
     outline: none;
     transition: .3s ease;
+    @include bp-up('md') {
+      width: 80px;
+      height: 80px;
+    }
 
     &--border {
       border: 1px solid map-get($gray, 200);
@@ -123,7 +173,16 @@
       opacity: 0.5;
       transition: all .25s ease;
     }
-    
+  
+    &:hover {
+      cursor: pointer;
+      border-color: $white;
+      position: relative;
+      z-index: 1;
+      svg {
+        opacity: 1;
+      }
+    }
   }
   
 }

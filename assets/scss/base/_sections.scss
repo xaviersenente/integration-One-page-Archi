@@ -1,10 +1,59 @@
 section {
   padding: pxToRem(60) 0;
+
+  @include bp-up('md') {
+    padding: pxToRem(120) 0;
+  }
 }
 
 .hero {
   background-color: map-get($gray, 600);
   position: relative;
+}
+
+.agency {
+
+  @include bp-up('md') {
+    position: relative;
+
+    &__header {
+      grid-column: 2 / span 5;
+    }
+
+    &__title {
+      margin-top: 0;
+    }
+
+    &__text,
+    &__btn {
+      margin-left: 21.5%;
+    }
+
+    &__img {
+      grid-column: 7 / span 6;
+      @include outsideRight;
+    }
+  
+    &::before {
+      content:'';
+      position: absolute;
+      border-top: 1px solid map-get($gray, 100);
+      grid-row: 1;
+      width: calc( ( 100vw - #{ $container } ) / 2 );
+    }
+  }
+  
+}
+
+.actu {
+  @include bp-up('md') {
+    &__header {
+      grid-column: 1 / span 12;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
 }
 
 .news {
@@ -40,6 +89,14 @@ section {
 
   &__img {
     display: block;
+    transition: transform .5s ease-in-out;
+    .news__link:hover & {
+      transform: scale(1.06);
+    }
+  }
+
+  @include bp-up('md') {
+    margin-top: pxToRem(40);
   }
 }
 
@@ -47,14 +104,32 @@ section {
   background: map-get($gray, 300) url("img/topography.svg");
   background-size: 1000px;
 
+  &__header {
+    @include bp-up('md') {
+      grid-column: span 3;
+      grid-row: 1;
+    }
+  }
+
   &__title {
     margin-bottom: pxToRem(60);
   }
 
   &__carousel {
+    @include bp-up('md') {
+      grid-column: 4 / span 9;
+      grid-row: 1 / span 2;
+    }
     margin-left: -20px;
     margin-right: -20px;
     @include outsideRight;
   }
-
+  
+  &__arrows {
+    @include bp-up('md') {
+      grid-column: span 3;
+      grid-row: 2;
+      align-self: end;
+    }
+  }
 }

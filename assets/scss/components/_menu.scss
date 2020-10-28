@@ -25,13 +25,40 @@
     text-decoration: none;
   }
 
+  &__nav {
+    @include bp-up('md') {
+      grid-column: 1 / span 4;
+      grid-row: 2 /span 2;
+    }
+  }
+
 
   &__socialNetworks {
     margin-bottom: 100px;
+
+    @include bp-up('md') {
+      grid-column: 1 / span 4;
+      grid-row: 3;
+      align-self: flex-end;
+    }
   }
 
   &__contact {
     display: none;
+
+    @include bp-up('md') {
+      display: grid;
+      background-image: linear-gradient(0deg, rgba(255,255,255,.95) 0%, rgba(255,255,255,.95) 100%), url("img/topography.svg");
+      background-size: 1000px;
+      grid-column: 6 / span 7;
+      grid-row: 3;
+      padding: 50px 20%;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, minmax(0, 150px));
+      align-content: center;
+      @include outsideRight;
+    }
+
   }
 }
 
